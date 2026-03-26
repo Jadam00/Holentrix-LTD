@@ -186,7 +186,7 @@ li {
 
   .nav__links {
     position: fixed;
-    top: var(--nav-h);
+    top: 3rem;
     left: 0; right: 0;
     flex-direction: column;
     background: var(--clr-bg-nav);
