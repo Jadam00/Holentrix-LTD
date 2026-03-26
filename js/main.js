@@ -9,17 +9,16 @@
   /* ------------------------------------------------------------------
      Mobile navigation toggle
      ------------------------------------------------------------------ */
-  const toggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  var toggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
 
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
-      const isOpen = navLinks.classList.toggle('open');
+      var isOpen = navLinks.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
@@ -28,7 +27,6 @@
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function (e) {
       if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
@@ -41,20 +39,20 @@
   /* ------------------------------------------------------------------
      Active nav link highlight (home page anchor scroll)
      ------------------------------------------------------------------ */
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
+  var sections = document.querySelectorAll('section[id]');
+  var navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
 
   if (sections.length && navAnchors.length) {
-    const observerOptions = {
+    var observerOptions = {
       root: null,
       rootMargin: '-40% 0px -55% 0px',
       threshold: 0,
     };
 
-    const observer = new IntersectionObserver(function (entries) {
+    var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
+          var id = entry.target.getAttribute('id');
           navAnchors.forEach(function (a) {
             a.classList.toggle('active', a.getAttribute('href') === '#' + id);
           });
@@ -70,10 +68,10 @@
   /* ------------------------------------------------------------------
      Scroll-triggered fade-up for elements with data-fade attribute
      ------------------------------------------------------------------ */
-  const fadeEls = document.querySelectorAll('[data-fade]');
+  var fadeEls = document.querySelectorAll('[data-fade]');
 
   if (fadeEls.length && 'IntersectionObserver' in window) {
-    const fadeObserver = new IntersectionObserver(
+    var fadeObserver = new IntersectionObserver(
       function (entries, obs) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -95,9 +93,9 @@
      ------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href').slice(1);
+      var targetId = this.getAttribute('href').slice(1);
       if (!targetId) return;
-      const target = document.getElementById(targetId);
+      var target = document.getElementById(targetId);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -108,9 +106,133 @@
   /* ------------------------------------------------------------------
      Current year in footer copyright
      ------------------------------------------------------------------ */
-  const yearEls = document.querySelectorAll('.js-year');
-  const currentYear = new Date().getFullYear();
+  var yearEls = document.querySelectorAll('.js-year');
+  var currentYear = new Date().getFullYear();
   yearEls.forEach(function (el) {
     el.textContent = currentYear;
   });
+
+  /* ------------------------------------------------------------------
+     Quote form handling
+     ------------------------------------------------------------------ */
+  var quoteForm = document.getElementById('quoteForm');
+  var formSuccess = document.getElementById('formSuccess');
+
+  if (quoteForm && formSuccess) {
+
+    function getVal(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    }
+
+    function setError(groupId, errId, show) {
+      var group = document.getElementById(groupId);
+      var errEl = document.getElementById(errId);
+      var input = group ? group.querySelector('input, select, textarea') : null;
+      if (group) {
+        group.classList.toggle('has-error', show);
+      }
+      if (input) {
+        if (show) {
+          input.classList.add('error');
+        } else {
+          input.classList.remove('error');
+        }
+      }
+      if (errEl) {
+        errEl.style.display = show ? 'block' : 'none';
+      }
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validateForm() {
+      var name = getVal('fname');
+      var email = getVal('femail');
+      var desc = getVal('fdesc');
+      var valid = true;
+
+      if (!name) {
+        setError('group-name', 'err-name', true);
+        valid = false;
+      } else {
+        setError('group-name', 'err-name', false);
+      }
+
+      if (!email || !isValidEmail(email)) {
+        setError('group-email', 'err-email', true);
+        valid = false;
+      } else {
+        setError('group-email', 'err-email', false);
+      }
+
+      if (!desc) {
+        setError('group-desc', 'err-desc', true);
+        valid = false;
+      } else {
+        setError('group-desc', 'err-desc', false);
+      }
+
+      return valid;
+    }
+
+    function buildMailtoBody() {
+      var name = getVal('fname');
+      var email = getVal('femail');
+      var company = getVal('fcompany');
+      var service = getVal('fservice');
+      var budget = getVal('fbudget');
+      var timeline = getVal('ftimeline');
+      var desc = getVal('fdesc');
+
+      var body = 'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        (company ? 'Company: ' + company + '\n' : '') +
+        (service ? 'Service Type: ' + service + '\n' : '') +
+        (budget ? 'Budget: ' + budget + '\n' : '') +
+        (timeline ? 'Timeline: ' + timeline + '\n' : '') +
+        '\nProject Description:\n' + desc;
+
+      return body;
+    }
+
+    quoteForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!validateForm()) return;
+
+      var name = getVal('fname');
+      var subject = 'Quote Request from ' + name;
+      var body = buildMailtoBody();
+
+      var mailtoLink = 'mailto:support@holentrix.com' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      // Show success message
+      quoteForm.style.display = 'none';
+      formSuccess.classList.add('visible');
+
+      // Attempt to open mailto
+      try {
+        window.location.href = mailtoLink;
+      } catch (err) {
+        // silently fail if mailto is not available
+      }
+    });
+
+    // Clear error state on input
+    ['fname', 'femail', 'fdesc'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        var groupMap = { fname: 'group-name', femail: 'group-email', fdesc: 'group-desc' };
+        var errMap = { fname: 'err-name', femail: 'err-email', fdesc: 'err-desc' };
+        setError(groupMap[id], errMap[id], false);
+      });
+    });
+  }
+
 })();
