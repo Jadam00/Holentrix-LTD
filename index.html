@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HOLENTRIX LTD — Software, AI, and digital product company building the next generation of intelligent applications." />
+  <meta name="description" content="HOLENTRIX LTD — Custom software, AI applications, mobile apps, and websites built to solve real business problems." />
   <meta name="theme-color" content="#090b12" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="HOLENTRIX LTD" />
-  <meta property="og:description" content="Software, AI, and digital products for the modern world." />
+  <meta property="og:description" content="Custom software, AI applications, mobile apps, and websites built to solve real business problems." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://holentrix.com/" />
 
   <title>HOLENTRIX LTD — Software &amp; AI</title>
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Favicon placeholder (replace with actual icon) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090b12'/><text y='24' x='4' font-size='22' fill='%2300e5ff'>H</text></svg>" />
 </head>
 <body>
@@ -42,11 +41,12 @@
       </button>
 
       <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#solutions">Solutions</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="#contact" class="nav__cta btn btn--primary">Request a Quote</a></li>
       </ul>
     </div>
   </nav>
@@ -57,74 +57,54 @@
   <section class="hero" id="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content">
-      <span class="hero__eyebrow fade-up">Software &bull; AI &bull; Digital Products</span>
+      <span class="hero__eyebrow fade-up">Software &bull; AI &bull; Websites &bull; Mobile Apps</span>
       <h1 class="hero__title fade-up fade-up--delay-1" id="hero-title">
-        Building the future,<br /><span class="highlight">one line at a time</span>
+        We build software that<br/><span class="highlight">solves real problems</span>
       </h1>
       <p class="hero__subtitle fade-up fade-up--delay-2">
-        HOLENTRIX LTD crafts intelligent software, AI-driven tools, and
-        digital products designed to push boundaries and deliver real value.
+        From AI-powered applications to custom websites and mobile apps — Holentrix builds digital products that work.
       </p>
       <div class="hero__ctas fade-up fade-up--delay-3">
-        <a href="#products" class="btn btn--primary">Explore Products</a>
-        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        <a href="#services" class="btn btn--primary">Explore Services</a>
+        <a href="#contact" class="btn btn--outline">Request a Quote</a>
       </div>
     </div>
   </section>
 
-  <div class="glow-divider"></div>
-
   <!-- ===================================================
-       ABOUT
+       TRUST / VALUE SECTION
        =================================================== -->
-  <section class="section" id="about" aria-labelledby="about-title">
+  <section class="section section--alt" id="trust" aria-labelledby="trust-title">
     <div class="container">
-      <header class="section__header">
-        <span class="section__tag">Who We Are</span>
-        <h2 class="section__title" id="about-title">About Holentrix</h2>
-        <p class="section__subtitle">
-          A modern software company at the intersection of AI and product design.
-        </p>
-      </header>
-
-      <div class="about__grid">
-        <div class="about__text" data-fade>
-          <p>
-            <strong>HOLENTRIX LTD</strong> is an independent software company focused on
-            creating high-quality digital products and AI-powered applications.
-            We believe technology should be elegant, accessible, and genuinely
-            useful.
-          </p>
-          <p>
-            From intelligent mobile apps to scalable backend services, we design
-            and build solutions that blend cutting-edge AI capabilities with
-            intuitive, user-centred interfaces.
-          </p>
-          <p>
-            Our team is driven by a passion for innovation and a commitment to
-            quality — whether we're shipping a consumer app or an enterprise
-            integration.
-          </p>
-          <a href="#contact" class="btn btn--accent mt-3">Work With Us</a>
+      <div class="section__header">
+        <span class="section__tag">Why Holentrix</span>
+        <h2 class="section__title" id="trust-title">Built to perform, designed to last</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item" data-fade>
+          <div class="trust-item__icon">🔧</div>
+          <h3 class="trust-item__title">Custom-Built</h3>
+          <p class="trust-item__desc">Every solution is built from scratch for your exact requirements. No templates, no shortcuts.</p>
         </div>
-
-        <div class="about__stats" data-fade>
-          <div class="stat-card">
-            <div class="stat-card__value">AI</div>
-            <div class="stat-card__label">Powered</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__value">∞</div>
-            <div class="stat-card__label">Scalable</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__value">24/7</div>
-            <div class="stat-card__label">Available</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-card__value">🔒</div>
-            <div class="stat-card__label">Secure</div>
-          </div>
+        <div class="trust-item" data-fade>
+          <div class="trust-item__icon">📈</div>
+          <h3 class="trust-item__title">Scales With You</h3>
+          <p class="trust-item__desc">Architecture designed to grow — from prototype to enterprise, without starting over.</p>
+        </div>
+        <div class="trust-item" data-fade>
+          <div class="trust-item__icon">🔒</div>
+          <h3 class="trust-item__title">Privacy First</h3>
+          <p class="trust-item__desc">Minimal data collection, transparent policies, and full user control built in from day one.</p>
+        </div>
+        <div class="trust-item" data-fade>
+          <div class="trust-item__icon">⚡</div>
+          <h3 class="trust-item__title">High Performance</h3>
+          <p class="trust-item__desc">Optimised for speed and reliability. We test and tune until it works under load.</p>
+        </div>
+        <div class="trust-item" data-fade>
+          <div class="trust-item__icon">🛠️</div>
+          <h3 class="trust-item__title">Modern Stack</h3>
+          <p class="trust-item__desc">Current best-practice technologies chosen for longevity, not trends.</p>
         </div>
       </div>
     </div>
@@ -133,79 +113,58 @@
   <div class="glow-divider"></div>
 
   <!-- ===================================================
-       PRODUCTS
+       SERVICES SECTION
        =================================================== -->
-  <section class="section section--alt" id="products" aria-labelledby="products-title">
+  <section class="section" id="services" aria-labelledby="services-title">
     <div class="container">
-      <header class="section__header">
+      <div class="section__header">
         <span class="section__tag">What We Build</span>
-        <h2 class="section__title" id="products-title">Our Products &amp; Services</h2>
-        <p class="section__subtitle">
-          Intelligent applications and tools that solve real-world problems.
-        </p>
-      </header>
-
+        <h2 class="section__title" id="services-title">Products &amp; Services</h2>
+        <p class="section__subtitle">Custom software, apps, and websites built to solve real business problems.</p>
+      </div>
       <div class="products__grid">
 
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">🤖</div>
+        <a href="ai-applications.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">🤖</div>
           <h3 class="product-card__title">AI Applications</h3>
-          <p class="product-card__desc">
-            Smart mobile and web applications powered by machine learning models,
-            natural language processing, and real-time AI inference.
-          </p>
-          <span class="product-card__badge">Live</span>
-        </article>
-
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">📱</div>
-          <h3 class="product-card__title">Mobile Apps</h3>
-          <p class="product-card__desc">
-            Cross-platform mobile experiences crafted for performance, usability,
-            and growth — designed for both Android and iOS audiences.
-          </p>
-          <span class="product-card__badge">Live</span>
-        </article>
-
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">⚙️</div>
-          <h3 class="product-card__title">Software Tools</h3>
-          <p class="product-card__desc">
-            Developer utilities, automation tools, and productivity software that
-            streamline complex workflows and save hours every week.
-          </p>
-          <span class="product-card__badge">In Development</span>
-        </article>
-
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">🌐</div>
-          <h3 class="product-card__title">Digital Services</h3>
-          <p class="product-card__desc">
-            End-to-end digital solutions including API integrations, cloud
-            architecture, and bespoke software consulting for businesses.
-          </p>
+          <p class="product-card__desc">Smart applications powered by machine learning and natural language processing. Built for real tasks, not demos.</p>
           <span class="product-card__badge">Available</span>
-        </article>
+        </a>
 
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">🔍</div>
+        <a href="mobile-apps.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">📱</div>
+          <h3 class="product-card__title">Mobile Apps</h3>
+          <p class="product-card__desc">Cross-platform mobile apps for Android and iOS. Designed for performance and built for real users.</p>
+          <span class="product-card__badge">Available</span>
+        </a>
+
+        <a href="software-tools.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">⚙️</div>
+          <h3 class="product-card__title">Software Tools</h3>
+          <p class="product-card__desc">Developer utilities, automation tools, and workflow software that save hours every week.</p>
+          <span class="product-card__badge">Available</span>
+        </a>
+
+        <a href="digital-services.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">🌐</div>
+          <h3 class="product-card__title">Digital Services</h3>
+          <p class="product-card__desc">API integrations, cloud architecture, and bespoke software consulting for growing businesses.</p>
+          <span class="product-card__badge">Available</span>
+        </a>
+
+        <a href="data-analytics.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">🔍</div>
           <h3 class="product-card__title">Data &amp; Analytics</h3>
-          <p class="product-card__desc">
-            Insights platforms and analytics dashboards that transform raw data
-            into actionable intelligence for smarter decision-making.
-          </p>
-          <span class="product-card__badge">Coming Soon</span>
-        </article>
+          <p class="product-card__desc">Dashboards and analytics platforms that turn raw data into decisions your team can act on.</p>
+          <span class="product-card__badge">Available</span>
+        </a>
 
-        <article class="product-card" data-fade>
-          <div class="product-card__icon" aria-hidden="true">🛡️</div>
-          <h3 class="product-card__title">Privacy-First Design</h3>
-          <p class="product-card__desc">
-            Every product we ship is built with privacy and security at its core —
-            minimal data collection, transparent policies, and user control.
-          </p>
-          <span class="product-card__badge">Always</span>
-        </article>
+        <a href="custom-websites.html" class="product-card product-card--link" data-fade>
+          <div class="product-card__icon">💻</div>
+          <h3 class="product-card__title">Custom Websites</h3>
+          <p class="product-card__desc">Fully custom business websites, landing pages, booking systems, and portals. Built for conversion, not just looks.</p>
+          <span class="product-card__badge">Available</span>
+        </a>
 
       </div>
     </div>
@@ -214,34 +173,273 @@
   <div class="glow-divider"></div>
 
   <!-- ===================================================
-       CONTACT
+       EXAMPLE SOLUTIONS SECTION
+       =================================================== -->
+  <section class="section section--alt" id="solutions" aria-labelledby="solutions-title">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Examples</span>
+        <h2 class="section__title" id="solutions-title">Example solutions we can design and build</h2>
+        <p class="section__subtitle">These are not real client projects — they show the types of solutions we build.</p>
+      </div>
+      <div class="solutions__grid">
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">AI Support Assistant</h3>
+          <p class="solution-card__desc">A conversational AI agent that handles customer questions, routes complex issues to staff, and logs everything automatically.</p>
+          <ul class="solution-card__features">
+            <li>Natural language understanding</li>
+            <li>Auto-routing to human agents</li>
+            <li>Full conversation logs</li>
+            <li>Integrates with existing tools</li>
+          </ul>
+        </div>
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">Business Website + Quote System</h3>
+          <p class="solution-card__desc">A custom website with an integrated quote request flow, CRM-ready form handling, and conversion-focused design.</p>
+          <ul class="solution-card__features">
+            <li>Mobile-first design</li>
+            <li>Quote/contact forms</li>
+            <li>CMS-ready content areas</li>
+            <li>SEO optimised</li>
+          </ul>
+        </div>
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">Analytics Dashboard</h3>
+          <p class="solution-card__desc">A real-time dashboard pulling from multiple data sources, with custom charts, alerts, and team-level access controls.</p>
+          <ul class="solution-card__features">
+            <li>Real-time data sync</li>
+            <li>Custom chart types</li>
+            <li>Role-based access</li>
+            <li>CSV/PDF export</li>
+          </ul>
+        </div>
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">Mobile Field App</h3>
+          <p class="solution-card__desc">A mobile app for field teams to log jobs, capture photos, submit reports, and sync with back-office systems offline-first.</p>
+          <ul class="solution-card__features">
+            <li>Offline-first sync</li>
+            <li>Photo capture</li>
+            <li>Job logging</li>
+            <li>Back-office integration</li>
+          </ul>
+        </div>
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">Internal Automation Tool</h3>
+          <p class="solution-card__desc">A workflow automation system that replaces manual spreadsheet processes with tracked, auditable digital flows.</p>
+          <ul class="solution-card__features">
+            <li>Custom workflow builder</li>
+            <li>Approval chains</li>
+            <li>Audit trail</li>
+            <li>Slack/email notifications</li>
+          </ul>
+        </div>
+
+        <div class="solution-card" data-fade>
+          <h3 class="solution-card__title">Client Portal</h3>
+          <p class="solution-card__desc">A branded web portal where clients can log in, view project status, raise support requests, and access documents.</p>
+          <ul class="solution-card__features">
+            <li>Secure login</li>
+            <li>Project tracking</li>
+            <li>Document storage</li>
+            <li>Support ticket system</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- ===================================================
+       HOW WE WORK SECTION
+       =================================================== -->
+  <section class="section how-we-work" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Our Process</span>
+        <h2 class="section__title" id="process-title">How we work</h2>
+        <p class="section__subtitle">A clear process from first conversation to live product.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-fade>
+          <div class="step__num">1</div>
+          <div class="step__body">
+            <div class="step__title">Discover</div>
+            <p class="step__desc">We talk through your goals, challenges, and constraints. No jargon, no sales pitch.</p>
+          </div>
+        </div>
+        <div class="step" data-fade>
+          <div class="step__num">2</div>
+          <div class="step__body">
+            <div class="step__title">Design</div>
+            <p class="step__desc">We define the solution architecture, user flows, and key decisions before writing a line of code.</p>
+          </div>
+        </div>
+        <div class="step" data-fade>
+          <div class="step__num">3</div>
+          <div class="step__body">
+            <div class="step__title">Build</div>
+            <p class="step__desc">We develop iteratively and keep you updated. You see real progress, not just promises.</p>
+          </div>
+        </div>
+        <div class="step" data-fade>
+          <div class="step__num">4</div>
+          <div class="step__body">
+            <div class="step__title">Refine</div>
+            <p class="step__desc">You test, we fix. We iterate until it works the way you need it to.</p>
+          </div>
+        </div>
+        <div class="step" data-fade>
+          <div class="step__num">5</div>
+          <div class="step__body">
+            <div class="step__title">Launch</div>
+            <p class="step__desc">We deploy, monitor, and support. After launch we're still here if you need us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CTA BAND
+       =================================================== -->
+  <div class="cta-band">
+    <div class="cta-band__inner">
+      <h2 class="cta-band__title">Need something custom? Let's build it.</h2>
+      <p class="cta-band__sub">Tell us what you need and we'll get back to you within 2 business days.</p>
+      <a href="#contact" class="btn btn--primary">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       ABOUT SECTION
+       =================================================== -->
+  <section class="section section--alt" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">About Us</span>
+        <h2 class="section__title" id="about-title">Who we are</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p><strong>Holentrix LTD</strong> is a UK-based software company specialising in custom digital products — AI applications, mobile apps, websites, and enterprise software tools.</p>
+          <p>We believe software should solve real problems, not create new ones. That means clean architecture, honest timelines, and products that actually get used.</p>
+          <p>Whether you need a full product built from scratch or a specialist team to extend your existing systems, we bring the same standards to every project.</p>
+          <a href="#contact" class="btn btn--outline mt-3">Work With Us</a>
+        </div>
+        <div class="about__stats">
+          <div class="stat-card">
+            <div class="stat-card__value">100%</div>
+            <div class="stat-card__label">Custom Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">6+</div>
+            <div class="stat-card__label">Service Areas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">UK</div>
+            <div class="stat-card__label">Based</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">48h</div>
+            <div class="stat-card__label">Response Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- ===================================================
+       CONTACT / QUOTE SECTION
        =================================================== -->
   <section class="section" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <header class="section__header">
+      <div class="section__header">
         <span class="section__tag">Get In Touch</span>
-        <h2 class="section__title" id="contact-title">Contact Holentrix</h2>
-        <p class="section__subtitle">
-          Questions, partnerships, or support — we'd love to hear from you.
-        </p>
-      </header>
+        <h2 class="section__title" id="contact-title">Request a Quote</h2>
+        <p class="section__subtitle">Tell us about your project. We'll respond within 2 business days.</p>
+      </div>
 
-      <div class="contact__wrapper" data-fade>
-        <div class="contact__card">
-          <p style="color: var(--clr-text-muted); margin-bottom: 1rem; font-size: 0.93rem;">
-            Reach our team directly via email:
-          </p>
-          <a class="contact__email" href="mailto:support@holentrix.com">
-            <span aria-hidden="true">✉️</span>
-            support@holentrix.com
-          </a>
-          <p class="contact__note">
-            We aim to respond to all enquiries within 2 business days.
-          </p>
-          <div class="contact__links">
-            <a href="support.html" class="btn btn--primary">Support Centre</a>
-            <a href="privacy.html" class="btn btn--outline">Privacy Policy</a>
+      <div class="quote-form">
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+          <div class="form-success__icon">✅</div>
+          <div class="form-success__title">Enquiry sent!</div>
+          <p class="form-success__msg">Thanks for reaching out. We'll get back to you within 2 business days.</p>
+        </div>
+
+        <form id="quoteForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group" id="group-name">
+              <label for="fname">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required autocomplete="name" />
+              <span class="form-error-msg" id="err-name">Please enter your name.</span>
+            </div>
+            <div class="form-group" id="group-email">
+              <label for="femail">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="femail" name="email" placeholder="you@example.com" required autocomplete="email" />
+              <span class="form-error-msg" id="err-email">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group" id="group-company">
+              <label for="fcompany">Company <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+              <input type="text" id="fcompany" name="company" placeholder="Your company" autocomplete="organization" />
+            </div>
+            <div class="form-group" id="group-service">
+              <label for="fservice">Service Type</label>
+              <select id="fservice" name="service">
+                <option value="">Select a service…</option>
+                <option value="AI Applications">AI Applications</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="Software Tools">Software Tools</option>
+                <option value="Digital Services">Digital Services</option>
+                <option value="Data &amp; Analytics">Data &amp; Analytics</option>
+                <option value="Custom Website">Custom Website</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group" id="group-budget">
+              <label for="fbudget">Budget <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+              <select id="fbudget" name="budget">
+                <option value="">Select a range…</option>
+                <option value="Under £5k">Under £5k</option>
+                <option value="£5k–£15k">£5k–£15k</option>
+                <option value="£15k–£50k">£15k–£50k</option>
+                <option value="£50k+">£50k+</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group" id="group-timeline">
+              <label for="ftimeline">Timeline <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+              <select id="ftimeline" name="timeline">
+                <option value="">Select a timeline…</option>
+                <option value="ASAP">ASAP</option>
+                <option value="Within 1 month">Within 1 month</option>
+                <option value="1–3 months">1–3 months</option>
+                <option value="3–6 months">3–6 months</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
+            <div class="form-group form-group--full" id="group-desc">
+              <label for="fdesc">Project Description <span aria-hidden="true">*</span></label>
+              <textarea id="fdesc" name="description" rows="5" placeholder="Describe what you need built…" required></textarea>
+              <span class="form-error-msg" id="err-desc">Please describe your project.</span>
+            </div>
           </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+          </div>
+        </form>
+
+        <div class="contact__email-row">
+          <span>Or email us directly:</span>
+          <a href="mailto:support@holentrix.com">support@holentrix.com</a>
         </div>
       </div>
     </div>
@@ -255,16 +453,15 @@
       <div class="footer__logo">HOLENTRIX<span>&nbsp;LTD</span></div>
       <nav class="footer__links" aria-label="Footer navigation">
         <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#solutions">Solutions</a>
         <a href="#about">About</a>
-        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="support.html">Support</a>
         <a href="mailto:support@holentrix.com">support@holentrix.com</a>
       </nav>
-      <p class="footer__copy">
-        &copy; <span class="js-year"></span> HOLENTRIX LTD. All rights reserved.
-        &nbsp;&mdash;&nbsp; holentrix.com
-      </p>
+      <p class="footer__copy">&copy; <span class="js-year"></span> HOLENTRIX LTD. All rights reserved.</p>
     </div>
   </footer>
 
