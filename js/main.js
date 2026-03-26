@@ -9,12 +9,12 @@
   /* ------------------------------------------------------------------
      Mobile navigation toggle
      ------------------------------------------------------------------ */
-  var toggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navLinks');
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
 
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
-      var isOpen = navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
@@ -39,20 +39,20 @@
   /* ------------------------------------------------------------------
      Active nav link highlight (home page anchor scroll)
      ------------------------------------------------------------------ */
-  var sections = document.querySelectorAll('section[id]');
-  var navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
 
   if (sections.length && navAnchors.length) {
-    var observerOptions = {
+    const observerOptions = {
       root: null,
       rootMargin: '-40% 0px -55% 0px',
       threshold: 0,
     };
 
-    var observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          var id = entry.target.getAttribute('id');
+          const id = entry.target.getAttribute('id');
           navAnchors.forEach(function (a) {
             a.classList.toggle('active', a.getAttribute('href') === '#' + id);
           });
@@ -68,10 +68,10 @@
   /* ------------------------------------------------------------------
      Scroll-triggered fade-up for elements with data-fade attribute
      ------------------------------------------------------------------ */
-  var fadeEls = document.querySelectorAll('[data-fade]');
+  const fadeEls = document.querySelectorAll('[data-fade]');
 
   if (fadeEls.length && 'IntersectionObserver' in window) {
-    var fadeObserver = new IntersectionObserver(
+    const fadeObserver = new IntersectionObserver(
       function (entries, obs) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -93,9 +93,9 @@
      ------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      var targetId = this.getAttribute('href').slice(1);
+      const targetId = this.getAttribute('href').slice(1);
       if (!targetId) return;
-      var target = document.getElementById(targetId);
+      const target = document.getElementById(targetId);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -106,8 +106,8 @@
   /* ------------------------------------------------------------------
      Current year in footer copyright
      ------------------------------------------------------------------ */
-  var yearEls = document.querySelectorAll('.js-year');
-  var currentYear = new Date().getFullYear();
+  const yearEls = document.querySelectorAll('.js-year');
+  const currentYear = new Date().getFullYear();
   yearEls.forEach(function (el) {
     el.textContent = currentYear;
   });
@@ -115,20 +115,20 @@
   /* ------------------------------------------------------------------
      Quote form handling
      ------------------------------------------------------------------ */
-  var quoteForm = document.getElementById('quoteForm');
-  var formSuccess = document.getElementById('formSuccess');
+  const quoteForm = document.getElementById('quoteForm');
+  const formSuccess = document.getElementById('formSuccess');
 
   if (quoteForm && formSuccess) {
 
     function getVal(id) {
-      var el = document.getElementById(id);
+      const el = document.getElementById(id);
       return el ? el.value.trim() : '';
     }
 
     function setError(groupId, errId, show) {
-      var group = document.getElementById(groupId);
-      var errEl = document.getElementById(errId);
-      var input = group ? group.querySelector('input, select, textarea') : null;
+      const group = document.getElementById(groupId);
+      const errEl = document.getElementById(errId);
+      const input = group ? group.querySelector('input, select, textarea') : null;
       if (group) {
         group.classList.toggle('has-error', show);
       }
@@ -145,14 +145,14 @@
     }
 
     function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      return /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(email);
     }
 
     function validateForm() {
-      var name = getVal('fname');
-      var email = getVal('femail');
-      var desc = getVal('fdesc');
-      var valid = true;
+      const name = getVal('fname');
+      const email = getVal('femail');
+      const desc = getVal('fdesc');
+      let valid = true;
 
       if (!name) {
         setError('group-name', 'err-name', true);
@@ -179,15 +179,15 @@
     }
 
     function buildMailtoBody() {
-      var name = getVal('fname');
-      var email = getVal('femail');
-      var company = getVal('fcompany');
-      var service = getVal('fservice');
-      var budget = getVal('fbudget');
-      var timeline = getVal('ftimeline');
-      var desc = getVal('fdesc');
+      const name = getVal('fname');
+      const email = getVal('femail');
+      const company = getVal('fcompany');
+      const service = getVal('fservice');
+      const budget = getVal('fbudget');
+      const timeline = getVal('ftimeline');
+      const desc = getVal('fdesc');
 
-      var body = 'Name: ' + name + '\n' +
+      const body = 'Name: ' + name + '\n' +
         'Email: ' + email + '\n' +
         (company ? 'Company: ' + company + '\n' : '') +
         (service ? 'Service Type: ' + service + '\n' : '') +
@@ -203,11 +203,11 @@
 
       if (!validateForm()) return;
 
-      var name = getVal('fname');
-      var subject = 'Quote Request from ' + name;
-      var body = buildMailtoBody();
+      const name = getVal('fname');
+      const subject = 'Quote Request from ' + name;
+      const body = buildMailtoBody();
 
-      var mailtoLink = 'mailto:support@holentrix.com' +
+      const mailtoLink = 'mailto:support@holentrix.com' +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
 
@@ -225,11 +225,11 @@
 
     // Clear error state on input
     ['fname', 'femail', 'fdesc'].forEach(function (id) {
-      var el = document.getElementById(id);
+      const el = document.getElementById(id);
       if (!el) return;
       el.addEventListener('input', function () {
-        var groupMap = { fname: 'group-name', femail: 'group-email', fdesc: 'group-desc' };
-        var errMap = { fname: 'err-name', femail: 'err-email', fdesc: 'err-desc' };
+        const groupMap = { fname: 'group-name', femail: 'group-email', fdesc: 'group-desc' };
+        const errMap = { fname: 'err-name', femail: 'err-email', fdesc: 'err-desc' };
         setError(groupMap[id], errMap[id], false);
       });
     });
